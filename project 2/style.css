@@ -1,0 +1,483 @@
+/* fonts  */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+
+/* css reset  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: aliceblue;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+:root {
+  --pri_color: #f9a826;
+  --sec_col: #e48f07;
+  --matte_black: #151515;
+  --flat_black: rgb(52, 58, 64);
+}
+
+/* navbar-section */
+
+#navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(51, 51, 51, 0.966);
+  z-index: 1;
+  border-bottom: 2px solid black;
+}
+#navbar > #logo > img {
+  width: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+#logo:hover {
+  filter: drop-shadow(0 0 5px aliceblue);
+  z-index: 2;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links > a {
+  font-size: 1.2rem;
+  color: aliceblue;
+  position: relative;
+  font-weight: 400;
+  margin: 1rem;
+  transition-duration: 0.3s;
+}
+
+.nav-links > a:hover,
+.nav-links > a:focus {
+  color: var(--pri_color);
+}
+
+.nav-links > a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1rem;
+  background-color: white;
+  transform: scale(0);
+  transition-duration: 0.3s;
+}
+
+.nav-links > a:hover::after,
+.nav-links > a:focus::after {
+  transform: scale(1);
+}
+
+#nav-btn {
+  display: flex;
+}
+
+#nav-btn > .ham,
+#nav-btn > .ham-btn {
+  display: none;
+}
+
+.ham-btn {
+  width: 2rem;
+  height: 2rem;
+}
+
+#nav-btn > .ham-btn {
+  position: relative;
+  opacity: 0;
+  left: 50%;
+}
+
+.ham > .ham-line {
+  width: 2rem;
+  height: 0.2rem;
+  border-radius: 1rem;
+  margin: 0.2rem 0;
+  background-color: white;
+  transition-duration: 0.3s;
+}
+
+#nav-btn > input:checked ~ .ham > .ham-line {
+  margin: 0.1rem 0;
+  background-color: var(--pri_color);
+}
+
+/* home-section */
+#home {
+  color: white;
+  height: 100vh;
+  min-height: 100vh;
+  padding: 4rem 0.5rem 0.5rem 0.5rem;
+  background-color: var(--flat_black);
+  background-image: radial-gradient(circle, rgb(53, 53, 53), #151515);
+}
+
+#home h1 > div:nth-child(1) {
+  font-size: 2rem;
+  font-weight: 550;
+  animation: welcome 1s forwards;
+  transform: scale(0);
+  animation-delay: 0.5s;
+}
+
+#home h1 > div:nth-child(2) {
+  font-size: 6rem;
+  animation: welcome 1s forwards;
+  transform: scale(0);
+  animation-delay: 1.5s;
+}
+
+#home h1 > div:nth-child(2) > span {
+  color: var(--pri_color);
+}
+
+@keyframes welcome {
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* scroll-down button  */
+
+.scroll-down {
+  width: 2.5rem;
+  height: 4rem;
+  border: 2px solid white;
+  border-radius: 5rem;
+  position: relative;
+  margin-bottom: 1rem;
+  transition-duration: 1s;
+}
+
+.scroll-down:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.479),
+    0 0 20px inset rgba(255, 255, 255, 0.507);
+}
+
+.scroll-down::before,
+.scroll-down::after {
+  content: "";
+  position: absolute;
+  transform: translateX(50%) rotate(-45deg);
+  height: 1rem;
+  width: 1rem;
+  border: transparent;
+  border-bottom: 2px solid white;
+  border-left: 2px solid white;
+  animation-name: arrow;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.scroll-down::after {
+  top: 1rem;
+  animation-delay: 0.2s;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(50%, 75%) rotate(-45deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(50%, 95%) rotate(-45deg);
+  }
+}
+
+/* about section */
+
+#about {
+  min-height: 95vh;
+  background-color: aliceblue;
+  padding: 4rem 0.5rem 0.5rem 0.5rem;
+}
+
+#about h2 {
+  color: var(--pri_color);
+  font-size: 2.5rem;
+}
+
+#about figcaption {
+  max-width: 30rem;
+}
+
+#about figure img {
+  width: 11rem;
+}
+
+/* projects section */
+
+
+/* contact section */
+
+#contact {
+  min-height: 90vh;
+  background-color: var(--matte_black);
+  padding: 1rem;
+  padding-top: 4rem;
+}
+#contact h1 {
+  color: var(--pri_color);
+  font-size: 3rem;
+}
+
+#contact h2 {
+  color: var(--sec_col);
+}
+
+.contact-box {
+  display: flex;
+  justify-content: center;
+  color: rgb(122, 122, 122);
+  margin: 1rem 0;
+}
+
+.contact-box h3 {
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  color: white;
+  text-align: left;
+}
+
+.contact-box > address {
+  background-color: rgba(47, 47, 47, 0.164);
+  padding: 2rem;
+  width: 18rem;
+  font-size: 0.9rem;
+  font-style: unset;
+}
+
+.contact-box > address a {
+  color: inherit;
+}
+
+.contact-box > address h4 {
+  margin: 2.5rem 0rem 1rem 0rem;
+  color: var(--pri_color);
+}
+
+.bxIcon {
+  margin: .1rem;
+  transition-duration: 0.3s;
+}
+.bxIcon:hover {
+  color: aliceblue;
+}
+.contact-box > form {
+  background-color: rgba(83, 83, 83, 0.164);
+  padding: 2rem;
+  width: 29rem;
+}
+
+.contact-box > form > input,
+.contact-box > form > textarea {
+  width: 98%;
+  display: block;
+  color: white;
+  background-color: transparent;
+  padding: 1rem 0;
+  border: none;
+  border-bottom: 1px solid grey;
+  resize: vertical;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  outline: none;
+  transition-duration: 0.3s;
+}
+
+.contact-box > form > input:focus,
+.contact-box > form > textarea:focus {
+  border-bottom-color: var(--pri_color);
+}
+
+.contact-box > form > input[type="submit"] {
+  padding: 0.5rem 0;
+  background-color: var(--pri_color);
+  color: inherit;
+  font-weight: 500;
+  letter-spacing: 0.25rem;
+  transition-duration: 0.5s;
+}
+
+.contact-box > form > input[type="submit"]:active,
+.contact-box > form > input[type="submit"]:hover,
+.contact-box > form > input[type="submit"]:focus {
+  background-color: var(--sec_col);
+  color: white;
+  outline: 1px solid white;
+}
+
+.failed {
+  border-bottom-color: #cf000f !important;
+}
+
+.success {
+  border-bottom-color: #27ae60 !important;
+}
+
+/* footer */
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  color: whitesmoke;
+  border-top: 1px solid aliceblue;
+  font-weight: 600;
+  background: var(--matte_black);
+  text-align: center;
+}
+
+/* Utility Classes */
+
+hr {
+  border: none;
+  border-top: 0.5rem dotted var(--flat_black);
+  width: 6rem;
+}
+
+.sec-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.para {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.top {
+  margin-top: auto;
+}
+
+.bottom {
+  padding-top: 0.5rem;
+  margin: auto auto 0 auto;
+}
+
+/* Custom Scroll-bar */
+
+/* For transparent background of scroll-bar */
+body {
+  overflow: overlay;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(68, 68, 68);
+  border-radius: 0.1rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Custom Selection-color */
+
+::-moz-selection {
+  color: rgb(255, 220, 164);
+  background-color: rgba(75, 75, 75, 0.493);
+}
+
+::selection {
+  color: rgb(255, 220, 164);
+  background-color: rgba(80, 80, 80, 0.8);
+}
+
+/* Custom autoComplete CSS */
+
+:-webkit-autofill,
+:-webkit-autofill:hover,
+:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--pri_color);
+  box-shadow: 0 0 0 1000px var(--flat_black) inset;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  /* navBar */
+  #nav-btn > .ham {
+    display: flex;
+    z-index: 2;
+  }
+
+  #nav-btn > .ham-btn {
+    display: block;
+    position: relative;
+    z-index: 3;
+  }
+
+  #nav-btn > .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(151, 149, 149, 0.98);
+  }
+
+  #nav-btn > input:checked ~ .nav-links {
+    display: flex;
+  }
+
+  /* Contact-Section */
+  .contact-box {
+    flex-wrap: wrap;
+  }
+  .contact-box > form,
+  .contact-box > address {
+    width: 100%;
+  }
+}

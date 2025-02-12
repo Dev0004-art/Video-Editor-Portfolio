@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>KJ Portfolio</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div id="logo">
+                <img src="img/avatar.svg" alt="">
+            </div>
+
+            <div id="nav-btn">
+                <input class="ham-btn " type="checkbox">
+                <div class="ham sec-con">
+                    <span class="ham-line"></span>
+                    <span class="ham-line"></span>
+                    <span class="ham-line"></span>
+                </div>
+
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="sec-con">
+            <div class='top'>
+                <div>
+                    <h1 class="t-center">
+                        <div>HELLO</div>
+                        <div>
+                            I'm <span>Kunal</span>
+                        </div>
+                    </h1>
+                    <p class="t-center para">Video Editor From Rachi.</p>
+                </div>
+            </div>
+            <div class="bottom sec-con">
+                <a href="#about" class="scroll-down"></a>
+                <hr>
+            </div>
+        </section>
+
+
+        <section id="about" class="sec-con t-center ">
+            <figure class="sec-con top">
+                <img src="img/avatar.svg" alt="">
+                <h2>Hi.</h2>
+                <figcaption class="para"> I'm a student and a part-time video Editor lives in India. I have a passion
+                    for
+                    video editing and love to create stunning edits for Youtube!
+                </figcaption>
+            </figure>
+            <hr class="bottom">
+        </section>
+
+        <section id="projects" class="sec-con">
+
+            <header class="t-center">
+                <h2>If you have intrest to see my works you can jut contact me.</h2>
+                </h2>
+            </header>
+
+
+
+
+        <section id="contact" class="sec-con">
+            <header class="t-center">
+                <h1>Contact Me</h1>
+                <h2>Contact me for stunning Edits </h2>
+            </header>
+
+            <div class="contact-box">
+
+                <form id="form" action="#">
+
+                    <h3>SEND ME A MESSAGE</h3>
+                    <input type="text" name="S-Name" id="name" placeholder="Your Name *">
+                    <input type="text" name="S-Email" id="email" placeholder="Your Email *">
+                    <input type="text" name="S-Subject" id="subject" placeholder="Subject">
+                    <textarea name="S-Message" id="message" cols="30" rows="10" placeholder="Your Message *"></textarea>
+                    <input type="submit" value="SUBMIT" id="submitBtn">
+                    <p>* Requried Field</p>
+
+                </form>
+
+                
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        2025 All rights reserved.
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
